@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended"], //"plugin:import/recommended"
+  extends: ["plugin:react/recommended", "plugin:import/recommended"], //
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -11,11 +11,11 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "prettier"], //"import"
+  plugins: ["react", "prettier", "import"], //
   rules: {
     "prettier/prettier": ["error"],
     "no-console": ["error", { allow: ["warn", "error"] }],
-    //"import/no-unresolved": [2, { commonjs: true, amd: true }],
+    "import/no-unresolved": [2, { commonjs: true, amd: true }],
   },
   overrides: [
     {
