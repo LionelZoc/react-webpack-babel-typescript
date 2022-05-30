@@ -17,6 +17,17 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "import/no-unresolved": [2, { commonjs: true, amd: true }],
   },
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
+    "import/resolver": {
+      typescript: {
+        project: __dirname,
+        alwaysTryTypes: true,
+      },
+    },
+  },
   overrides: [
     {
       files: ["**/*.ts", "**/*.tsx"],
@@ -25,11 +36,12 @@ module.exports = {
         project: "./tsconfig.json",
       },
       plugins: ["@typescript-eslint"],
-      // extends: [
-      //   //"plugin:import/typescript",
-      //   //  "plugin:@typescript-eslint/recommended",
-      // ],
+      extends: [
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
+      ],
       rules: {
+        "import/no-unresolved": [2, { commonjs: true, amd: true }],
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/member-delimiter-style": [
           "error",
@@ -46,6 +58,17 @@ module.exports = {
         ],
         "@typescript-eslint/explicit-function-return-type": "off",
         "react/prop-types": "off",
+      },
+      settings: {
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"],
+        },
+        "import/resolver": {
+          typescript: {
+            project: __dirname,
+            alwaysTryTypes: true,
+          },
+        },
       },
     },
   ],
