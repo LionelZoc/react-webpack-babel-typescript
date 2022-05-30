@@ -17,7 +17,7 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
     // alias: {
     //   appComponents: path.resolve(__dirname, "src/components/"),
     // },
@@ -26,10 +26,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-react"],
+          },
         },
       },
       {
