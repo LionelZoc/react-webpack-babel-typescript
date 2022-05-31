@@ -1,5 +1,5 @@
 import React from "react";
-import Test from "./components/mine";
+import Test from "appComponents/mine";
 import { again } from "./components/other";
 function App() {
   return (

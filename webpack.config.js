@@ -18,9 +18,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    // alias: {
-    //   appComponents: path.resolve(__dirname, "src/components/"),
-    // },
+    alias: {
+      appComponents: path.resolve(__dirname, "src/components/"),
+    },
   },
   // Rules of how webpack will take our files, complie & bundle them for the browser
   module: {

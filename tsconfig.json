@@ -4,8 +4,8 @@
   // Optional, but makes it so you don’t have to use relative
                       // paths for imports. Add as many folders as you need.
   "paths": {
-    "components": [
-      "./components"
+    "appComponents/*": [
+      "components/*"
     ]
   },
   // Target latest version of ECMAScript.
