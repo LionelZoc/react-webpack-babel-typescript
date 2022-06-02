@@ -1,7 +1,7 @@
 const { merge } = require("webpack-merge");
 const { join, resolve } = require("path");
 const common = require("./webpack.config.js");
-//const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 //const CircularDependencyPlugin = require("circular-dependency-plugin");
 //const webpack = require("webpack");
@@ -20,6 +20,13 @@ module.exports = merge(common, {
     static: resolve(__dirname, "dist"),
     hot: true,
     historyApiFallback: true,
+    liveReload: false,
+    allowedHosts: "all",
+    client: {
+      overlay: {
+        errors: true,
+      },
+    },
   },
   // devServer: {
   //   //hot: true,
@@ -40,11 +47,11 @@ module.exports = merge(common, {
   plugins: [
     //new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
-    // new CleanWebpackPlugin({
-    //   verbose: true,
-    //   dry: false,
-    //   cleanStaleWebpackAssets: false,
-    // }),
+    new CleanWebpackPlugin({
+      verbose: true,
+      dry: false,
+      cleanStaleWebpackAssets: false,
+    }),
     // new CircularDependencyPlugin({
     //   // exclude detection of files based on a RegExp
     //   exclude: /a\.js|node_modules/,
