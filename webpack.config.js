@@ -2,13 +2,19 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
+const mainEntry = path.join(__dirname, "src/index.js");
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    main: mainEntry,
+    //do not create entry point for vendors
+    //vendor: ["react", "react-dom"],
+  },
   devtool: isProduction ? "source-map" : "inline-source-map",
   // Where files should be sent once they are bundled
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "index.bundle.js",
+    filename: "[name].[contenthash].bundle.js",
+    publicPath: "/",
   },
   // webpack 5 comes with devServer which loads in development mode
 

@@ -9,6 +9,11 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
+  // output: {
+  //   path: join(__dirname, "/dist"),
+  //   filename: "[name].bundle.js",
+  //   //publicPath: "/",
+  // },
   // resolve: {
   //   alias: {
   //     "react-dom$": "react-dom/profiling",
