@@ -9,6 +9,20 @@ module.exports = {
     //do not create entry point for vendors
     //vendor: ["react", "react-dom"],
   },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      //chunks: "all",
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+          //priority: -10,
+        },
+      },
+    },
+  },
   devtool: isProduction ? "source-map" : "inline-source-map",
   // Where files should be sent once they are bundled
   output: {
