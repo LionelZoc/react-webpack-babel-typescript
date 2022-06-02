@@ -11,11 +11,7 @@ module.exports = {
     filename: "index.bundle.js",
   },
   // webpack 5 comes with devServer which loads in development mode
-  devServer: {
-    port: 3001,
-    static: path.resolve(__dirname, "dist"),
-    hot: true,
-  },
+
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
